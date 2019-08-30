@@ -40,19 +40,19 @@ void ShowDoors()
 	std::cout << "\n" << std::endl;
 	if (EastTile != NULL)
 	{
-		std::cout << "  There is a door to the East." << std::endl;
+		std::cout << " There is a door to the East." << std::endl;
 	}
 	if (WestTile != NULL)
 	{
-		std::cout << "  There is a door to the West." << std::endl;
+		std::cout << " There is a door to the West." << std::endl;
 	}
 	if (NorthTile != NULL)
 	{
-		std::cout << "  There is a door to the North." << std::endl;
+		std::cout << " There is a door to the North." << std::endl;
 	}
 	if (SouthTile != NULL)
 	{
-		std::cout << "  There is a door to the South." << std::endl;
+		std::cout << " There is a door to the South." << std::endl;
 	}
 }
 
@@ -68,21 +68,22 @@ int AskWhichDirection()
 		std::cout << " Moving East!" << std::endl;
 		return EAST;
 	}
-	if (dir == "west" && WestTile != NULL)
+	else if (dir == "west" && WestTile != NULL)
 	{
 		std::cout << " Moving West!" << std::endl;
 		return WEST;
 	}
-	if (dir == "north" && NorthTile != NULL)
+	else if (dir == "north" && NorthTile != NULL)
 	{
 		std::cout << " Moving North!" << std::endl;
 		return NORTH;
 	}
-	if (dir == "south" && SouthTile != NULL)
+	else if (dir == "south" && SouthTile != NULL)
 	{
 		std::cout << " Moving South!" << std::endl;
 		return SOUTH;
 	}
+
 	return NODOOR;
 }
 
@@ -91,21 +92,22 @@ void ChangeTiles(Player *player, int door)
 	switch (door)
 	{
 	case EAST:
-		player->currentTile->EastTile;
+		player->currentTile = EastTile;
 		break;
 	case WEST:
-		player->currentTile->WestTile;
+		player->currentTile = WestTile;
 		break;
 	case NORTH:
-		player->currentTile->NorthTile;
+		player->currentTile = NorthTile;
 		break;
 	case SOUTH:
-		player->currentTile->SouthTile;
+		player->currentTile = SouthTile;
 		break;
 	default:
 		std::cout << " There isn't a door there." << std::endl;
 		break;
 	}
 }
+
 
 #endif

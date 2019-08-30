@@ -8,30 +8,34 @@
 #include <algorithm>
 #include <iostream>
 
+
 class Entity
 {
 public:
 	std::string name;
 	int health;
 	int damage;
+	bool isEnemy;
 };
 
 struct GameTile
 {
 	int x, y;
-	bool isEndGameTile{false};
+	bool isEndGameTile = false;
 	std::string RoomDesc;
 	std::vector<Entity*> EntityList;
-	GameTile *NorthTile{ NULL };
-	GameTile *SouthTile{ NULL };
-	GameTile *EastTile{ NULL };
-	GameTile *WestTile{ NULL };
+	GameTile *NorthTile = NULL;
+	GameTile *SouthTile = NULL;
+	GameTile *EastTile = NULL;
+	GameTile *WestTile = NULL;
 };
+
 
 class Player : public Entity
 {
 public:
-	GameTile * currentTile{ NULL };
+	GameTile * currentTile = NULL;
+
 	Player(std::string n, int h, int d, GameTile *gT)
 	{
 		name = n;
@@ -44,13 +48,14 @@ public:
 class Enemy : public Entity
 {
 public:
-	bool isDead;
+	//bool isDead;
 	Enemy(std::string n, int h, int d, bool b)
 	{
 		name = n;
 		health = h;
 		damage = d;
-		isDead = b;
+		//isDead = b;
+		isEnemy = b;
 	}
 };
 
@@ -67,12 +72,10 @@ public:
 	}
 };
 
+
 std::vector<GameTile> GameMap3x1;
 
-GameTile *NorthTile{ NULL };
-GameTile *SouthTile{ NULL };
-GameTile *EastTile{ NULL };
-GameTile *WestTile{ NULL };
+GameTile *EastTile = NULL, *WestTile = NULL, *NorthTile = NULL, *SouthTile = NULL;
 
 enum { NODOOR, EAST, WEST, NORTH, SOUTH };
 
