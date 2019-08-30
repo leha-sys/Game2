@@ -69,10 +69,10 @@ public:
 
 std::vector<GameTile> GameMap3x1;
 
-//GameTile *NorthTile{ NULL };
-//GameTile *SouthTile{ NULL };
-//GameTile *EastTile{ NULL };
-//GameTile *WestTile{ NULL };
+GameTile *NorthTile{ NULL };
+GameTile *SouthTile{ NULL };
+GameTile *EastTile{ NULL };
+GameTile *WestTile{ NULL };
 
 enum { NODOOR, EAST, WEST, NORTH, SOUTH };
 
