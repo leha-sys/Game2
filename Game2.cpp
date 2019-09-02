@@ -4,7 +4,9 @@
 TODO:
 show health in the main room (console out)
 take health in the main room from shrine (new function)
-choise to go or to take a health
+choice to go or to take a health
+move RoomAction() to the separate file
+
 
 */
 
